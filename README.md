@@ -4,7 +4,7 @@ A robust, portfolio-grade Pokemon application built with **React 19**, **TypeScr
 
 ## Live Demo
 
-_[Insert your Vercel/Netlify link here]_
+(https://poke-portfolio-hazel.vercel.app/)
 
 ## 🛠️ Technical Implementation & Engineering Highlights
 
