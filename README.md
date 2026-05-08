@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# PokePortfolio: High-Performance Pokemon Encyclopedia & Game Engine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A robust, portfolio-grade Pokemon application built with **React 19**, **TypeScript**, and **Vite**. This project goes beyond a simple API browser, implementing a full suite of features including an interactive game engine, a paginated items database, and an advanced Pokedex with real-time audio and evolution mapping.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+*[Insert your Vercel/Netlify link here]*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technical Implementation & Engineering Highlights
 
-## React Compiler
+### 1. Data Orchestration & API Architecture
+The application features a sophisticated service layer engineered to interface with the **PokeAPI**. 
+*   **Type-Safe Services**: Every API response is strictly typed, ensuring a robust data flow and eliminating runtime errors.
+*   **Asynchronous Parallelism**: Utilizes `Promise.all` to fetch Pokemon stats, species metadata, and evolution chains concurrently, drastically reducing Time-to-Interactive (TTI).
+*   **Efficient Pagination**: Implements an offset-based "Load More" system to handle the 1,000+ entries without performance degradation or massive initial payloads.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. State Management & Logic
+*   **Optimized Filtering**: Leverages `useMemo` for high-speed client-side search and sorting, ensuring the UI remains responsive even as the loaded dataset grows.
+*   **Game Engine Logic**: The "Who's That Pokemon?" quiz uses custom hooks to manage game states, including silhouette processing via CSS filters, score persistence, and dynamic audio hint injection.
+*   **Version-Controlled Lore**: A custom implementation that filters through thousands of flavor text entries to allow users to toggle between different game-version descriptions (e.g., *Red/Blue* vs. *Scarlet/Violet*).
 
-## Expanding the ESLint configuration
+### 3. UI/UX Engineering
+*   **Interactive Move Tooltips**: A "Hover-for-Detail" system that lazy-loads specific move data (Power, Accuracy, Description) to keep the main detail view lightweight.
+*   **Dynamic Theming**: The UI contextually adapts its color palette based on the primary Pokemon type using CSS Variables and conditional rendering.
+*   **Multimedia Integration**: Seamless integration of high-fidelity official artwork and live `.ogg` audio cries.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 4. Professional Workflow
+*   **Feature Branch Workflow**: Developed using independent branches for branding, engine logic, and the quiz system to simulate a professional collaborative environment.
+*   **Conventional Commits**: Adheres to the Conventional Commits standard to ensure a readable and professional project history.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Project Structure
+```text
+src/
+├── components/   # Modular UI components (Layout, Grid, Tooltips)
+├── pages/        # High-level views (Pokedex, Items, Quiz)
+├── services/     # Type-safe API integration layer
+└── assets/       # Static branding and logo assets
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏗️ Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Clone & Install**:
+    ```bash
+    git clone [your-repo-url]
+    cd pokemon
+    npm install
+    ```
+2.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+3.  **Build for Production**:
+    ```bash
+    npm run build
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🌐 Deployment Guide
+This project is optimized for **Vercel** or **Netlify**:
+1.  Connect your GitHub repository to the hosting platform.
+2.  The platform will automatically detect **Vite** settings.
+3.  Deploy! Every push to `main` will trigger a fresh build.
+
+---
+**Built with PokeAPI and Engineering Excellence • 2026**
