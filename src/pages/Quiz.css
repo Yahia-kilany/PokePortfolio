@@ -1,0 +1,168 @@
+.quiz-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-header {
+  text-align: center;
+  width: 100%;
+}
+
+.score-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: fit-content;
+  margin: 0 auto 1rem;
+}
+
+.best-score {
+  border-left: 1px solid #eee;
+  padding-left: 0.75rem;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.quiz-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pokemon-silhouette-box {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #f0f0f0 0%, #fff 70%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.silhouette-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.revealed .silhouette-image {
+  filter: brightness(1) drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+.hint-button {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #ff5350;
+  backdrop-filter: blur(5px);
+  transition: all 0.2s;
+}
+
+.hint-button:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+.hint-button span {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.quiz-controls {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.quiz-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.quiz-input:focus {
+  border-color: #ff5350;
+}
+
+.guess-button, .next-button {
+  padding: 0 2rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guess-button {
+  background: #ff5350;
+  color: white;
+}
+
+.next-button {
+  background: #333;
+  color: white;
+}
+
+.guess-button:hover, .next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.feedback-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  animation: slideUp 0.3s ease-out;
+}
+
+.feedback-message.correct { color: #2ecc71; }
+.feedback-message.incorrect { color: #e74c3c; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+  .quiz-controls {
+    flex-direction: column;
+  }
+}
