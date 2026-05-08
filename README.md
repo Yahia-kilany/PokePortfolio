@@ -1,6 +1,6 @@
 # PokePortfolio: High-Performance Pokemon Encyclopedia & Game Engine
 
-A robust, portfolio-grade Pokemon application built with **React 19**, **TypeScript**, and **Vite**. This project goes beyond a simple API browser, implementing a full suite of features including an interactive game engine, a paginated items database, and an advanced Pokedex with real-time audio and evolution mapping.
+A robust, Pokemon application built with **React 19**, **TypeScript**, and **Vite**. This project goes beyond a simple API browser, implementing a full suite of features including an interactive game engine, a paginated items database, and an advanced Pokedex with real-time audio and evolution mapping.
 
 ## Live Demo
 
@@ -47,7 +47,7 @@ src/
 
 1. **Clone & Install**:
    ```bash
-   git clone [your-repo-url]
+   git clone https://github.com/Yahia-kilany/PokePortfolio.git
    cd pokemon
    npm install
    ```
